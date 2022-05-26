@@ -1,38 +1,17 @@
 import sys
-from collections import defaultdict
 import heapq
 input = sys.stdin.readline
 
 n = int(input())
-dic = defaultdict(list)
-key = []
-result = 0
+pd = [list(map(int,input().split())) for _ in range(n)]
+pd.sort(key = lambda x:x[1])
+h = []
 
 for i in range(n):
-    a,b = map(int,input().split())
-    heapq.heappush(dic[b],-a)
-    key.append(b)
+    heapq.heappush(h, pd[i])
+    if len(h) > pd[i][1]:
+        heapq.heappop(h)
 
-key = list(set(key))
-key.sort(reverse = True)
+print(sum([x[0] for x in h]))
+        
 
-max = 0
-j = key.pop()
-for i in range(n):
-    print(result)
-    if n-i > j:
-        j = key.pop()
-        continue
-    now = -heapq.heappop(dic[j])
-    if max < now:
-        result += now
-        try:
-            max = -heapq.heappop(dic[j])
-        except IndexError:
-            j = key.pop()
-            max = 0
-    else:
-        result += max
-        j = key.pop()
-
-print(result)
