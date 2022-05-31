@@ -1,5 +1,4 @@
 import sys
-# from collections import defaultdict
 sys.setrecursionlimit(10000)
 
 def dfs(i,j):
@@ -15,8 +14,8 @@ def dfs(i,j):
                 flag += 1
         else:
             flag += 1
-        if flag == 4:
-            count[i][j] = max(sum(alpha),count[i][j])
+        if flag == 4: # 상하좌우가 다 막힌경우
+            count[i][j] = max(sum(alpha),count[i][j]) #사용하고 있는 알파벳 갯수
                 
                 
 input = sys.stdin.readline

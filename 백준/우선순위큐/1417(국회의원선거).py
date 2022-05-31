@@ -10,10 +10,10 @@ for _ in range(n-1):
 
 now = 0
 try:
-    now = -heapq.heappop(vote)
+    now = -heapq.heappop(vote) # 최대값을 계속 출력
 except:
     pass
-while dasom <= now:
+while dasom <= now: # 다솜이 최대값보다 커지면 반복문 멈춤
     now -= 1
     heapq.heappush(vote,-int(now))
     dasom += 1
