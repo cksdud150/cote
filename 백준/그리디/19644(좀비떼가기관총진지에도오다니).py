@@ -13,6 +13,7 @@ bomb = deque([0]*ml) # 폭탄을 사용한적이 있는지 체크하는 배열
 result = 'YES'
 
 n_bomb = 0 # 현재 상태에서 폭탄이 몇개가 사용되는지
+
 for _ in range(l):
     g = gun.popleft()
     now = zombie.popleft() # 좀비의 체력

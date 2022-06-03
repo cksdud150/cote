@@ -28,9 +28,7 @@ for i in range(1,n):
         board[i][3] = total[i] - dic[c] # 여태까지의 누적합에 같은 색상 누적합을 빼서 계산
     t += s
     dic[c] += s
-    
-    
-    
+
 board.sort(key = lambda x:x[0])    
 
 for x in board:
